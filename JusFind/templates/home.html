@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JusFind</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
+    <nav>
+      <div class="navbar">
+        <div class="left montserrat">JusFind</div>
+        <!-- <div class="right">
+          <a href="#" class="login-button">Login</a>
+        </div> -->
+      </div>
+    </nav>
+    <main>
+      <div class="search-bar">
+        <form method="POST" id="search-form">
+          {% csrf_token %}
+          <input
+            type="text"
+            name="query"
+            id="user-query"
+            placeholder="Search your query here..."
+            required />
+          <button type="submit" class="find-button">Search</button>
+        </form>
+      </div>
+
+      <div id="loading" style="display: none">
+        <p>Loading response, please wait...</p>
+      </div>
+
+      <div class="response-space" id="response-space">
+        {% if responses %}
+        <p>{{ user_query }}</p>
+        <ul>
+          {% for parent_doc_id, response in responses.items %}
+          <li>
+            <a href="{% url 'serve_file' parent_doc_id %}" target="_blank">
+              {{ parent_doc_id }}
+            </a>
+            {{ response|safe }}
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p>Submit a query to see results.</p>
+        {% endif %}
+      </div>
+    </main>
+
+    <script>
+      const form = document.getElementById("search-form");
+      const loading = document.getElementById("loading");
+      const responseSpace = document.getElementById("response-space");
+
+      form.addEventListener("submit", function () {
+        loading.style.display = "flex";
+        responseSpace.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+ 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #020617;
+}
+
+.montserrat {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+.navbar {
+  background-color: #020617;
+  color: #f8fafc;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .left {
+  font-size: 24px; 
+}
+
+.navbar .right .login-button {
+  color: #f8fafc;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid #f8fafc;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar .right .login-button:hover {
+  background-color: #f8fafc;
+  color: #020617;
+}
+
+main {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+}
+
+.search-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar form {
+  width: 100%;
+  display: flex;
+}
+
+.search-bar input {
+  flex-grow: 1;  
+  font-size: 16px;
+  border: 2px solid #020617;
+  border-radius: 5px;
+  margin-right: 10px;  
+  padding: 10px;
+  box-sizing: border-box;  
+}
+
+.search-bar .find-button {
+  width: 100px; 
+  background-color: #020617;
+  color: #f8fafc;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.search-bar .find-button:hover {
+  background-color: #333333;
+}
+
+.search-bar .find-button:hover {
+  background-color: #333333;
+}
+
+.response-space {
+  width: 100%;
+  min-height: 75vh;
+  border: 2px solid #020617;
+  border-radius: 5px;
+  padding: 20px; 
+  font-size: 14px;
+  box-sizing: border-box;
+  text-align: left;
+ 
+}
+
+.response-space p {
+  text-align: justify;
+}
+
+#loading {
+  font-size: 18px;
+  font-style: italic;
+  color: #555555;
+} 
+ 
+.file-content {
+  margin: 2rem auto;
+  width: 80%;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: justify;
+  font-family: sans-serif;
+}
+
+.file-content h2 {
+  font-size: 1.5rem;
+  color: #4caf50;
+}
+
+.file-content p {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 5px; 
+  font-size: 14px; 
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
